@@ -8,8 +8,9 @@
 import scrapy
 
 
-class Block(scrapy.Item):
+class Set(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     name = scrapy.Field()
-    sets = scrapy.Field()
+    url = scrapy.Field()
+    code = scrapy.Field()
