@@ -4,6 +4,15 @@ from __future__ import absolute_import
 from scrapy.spider import BaseSpider
 from ..items import Set
 
+""" TODO:
+1. Read other sets as well:
+    a. Special sets
+    b. MTGO
+    c. Promo Cards
+2. Read other languages as well:
+    a. German, French, Italian, Spanish, Portuguese, Japanese, Chinese, Russian,
+        Taiwanese, Korean
+"""
 
 class MagicSpider(BaseSpider):
     name = "magic"
