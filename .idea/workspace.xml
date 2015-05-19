@@ -4,10 +4,8 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b3d97a5-3697-462e-b890-e3ae501efe4b" name="Default" comment="Automatically creating">
-      <change type="MODIFICATION" beforePath="D:/dev/python/magic-tools/mtgset/image_download.py" afterPath="D:/dev/python/magic-tools/mtgset/image_download.py" />
-      <change type="MODIFICATION" beforePath="D:/dev/python/magic-tools/mtgset/mtgset/spiders/magic.py" afterPath="D:/dev/python/magic-tools/mtgset/mtgset/spiders/magic.py" />
-      <change type="MODIFICATION" beforePath="D:/dev/python/magic-tools/.idea/workspace.xml" afterPath="D:/dev/python/magic-tools/.idea/workspace.xml" />
+    <list default="true" id="7b3d97a5-3697-462e-b890-e3ae501efe4b" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="D:/dev/python/magic-tools/mtgset/mtgset/output/sets_mcinfo.json" />
     </list>
     <ignored path="untitled.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,8 +32,8 @@
           <file leaf-file-name="image_download.py" pinned="false" current-in-tab="true">
             <entry file="file://D:/dev/python/magic-tools/mtgset/image_download.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.53645265">
-                  <caret line="74" column="56" selection-start-line="74" selection-start-column="56" selection-end-line="74" selection-end-column="56" />
+                <state vertical-scroll-proportion="0.38846573">
+                  <caret line="66" column="49" selection-start-line="66" selection-start-column="48" selection-end-line="66" selection-end-column="50" />
                   <folding>
                     <element signature="e#29#40#0" expanded="true" />
                   </folding>
@@ -455,7 +453,13 @@
       <option name="project" value="LOCAL" />
       <updated>1432069598356</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary=" Automatic creation of magiccard.info set info done.">
+      <created>1432073447057</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1432073447057</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView">
@@ -530,7 +534,8 @@
     <MESSAGE value="Initial Commit" />
     <MESSAGE value="Added .json files.&#10;Starting functionality: loading sets from the json file and determine which ones the user might want to download." />
     <MESSAGE value="Reading sets_original okay.&#10;Printing sets_original with id numbers okay." />
-    <option name="LAST_COMMIT_MESSAGE" value="Reading sets_original okay.&#10;Printing sets_original with id numbers okay." />
+    <MESSAGE value=" Automatic creation of magiccard.info set info done." />
+    <option name="LAST_COMMIT_MESSAGE" value=" Automatic creation of magiccard.info set info done." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -642,8 +647,8 @@
     </entry>
     <entry file="file://D:/dev/python/magic-tools/mtgset/image_download.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53645265">
-          <caret line="74" column="56" selection-start-line="74" selection-start-column="56" selection-end-line="74" selection-end-column="56" />
+        <state vertical-scroll-proportion="0.38846573">
+          <caret line="66" column="49" selection-start-line="66" selection-start-column="48" selection-end-line="66" selection-end-column="50" />
           <folding>
             <element signature="e#29#40#0" expanded="true" />
           </folding>
