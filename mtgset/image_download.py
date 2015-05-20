@@ -30,6 +30,7 @@ class SetManager(object):
     _SPIDER = "sets_crawler"
     _FORMAT = "json"
     _sets_original = None
+    _sets_mcinfo = None
 
     def read_sets_original(self):
         """
@@ -60,7 +61,12 @@ class SetManager(object):
         :return:
         """
         if not os.path.isfile(self._JSON_SET_FILE_MCINFO):
-            pass
+            self._create_sets_mcinfo()
+
+        with open(self._JSON_SET_FILE_MCINFO) as json_file:
+            self._sets_mcinfo = json.load(json_file)
+
+
 
     def _create_sets_mcinfo(self):
         """
@@ -71,9 +77,11 @@ class SetManager(object):
         :return:
         """
         print "DEBUG: Crawling http://magiccard.info/sitemap.html for set data."
-        cmd =  "scrapy crawl {} -o \"{}\" -t {}".format(self._SPIDER,
-                                                        "mtgset/output/sets_mcinfo.json",
-                                                        self._FORMAT)
+        cmd =  "scrapy crawl {} -o \"{}\" -t {}".format(
+            self._SPIDER,
+            "mtgset/output/sets_mcinfo.json",
+            self._FORMAT
+        )
         print cmd
         os.system(cmd)
         print "DEBUG: Done crawling."
@@ -88,7 +96,7 @@ if __name__ == "__main__":
     # sm.read_sets_original()
     # sm.list_sets_original()
     # sm.read_sets_mcinfo()
-    sm._create_sets_mcinfo()
+    sm.read_sets_mcinfo()
 
 
 

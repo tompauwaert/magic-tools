@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b3d97a5-3697-462e-b890-e3ae501efe4b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="D:/dev/python/magic-tools/mtgset/mtgset/output/sets_mcinfo.json" />
+      <change type="DELETED" beforePath="D:\dev\python\magic-tools\mtgset\mtgset\output\sets_mcinfo.json" afterPath="" />
+      <change type="MODIFICATION" beforePath="D:/dev/python/magic-tools/mtgset/image_download.py" afterPath="D:/dev/python/magic-tools/mtgset/image_download.py" />
+      <change type="MODIFICATION" beforePath="D:/dev/python/magic-tools/.idea/workspace.xml" afterPath="D:/dev/python/magic-tools/.idea/workspace.xml" />
     </list>
     <ignored path="untitled.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,14 +28,14 @@
     <favorites_list name="untitled" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.6186207">
       <split-first>
         <leaf>
           <file leaf-file-name="image_download.py" pinned="false" current-in-tab="true">
             <entry file="file://D:/dev/python/magic-tools/mtgset/image_download.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.38846573">
-                  <caret line="66" column="49" selection-start-line="66" selection-start-column="48" selection-end-line="66" selection-end-column="50" />
+                <state vertical-scroll-proportion="0.114735655">
+                  <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
                   <folding>
                     <element signature="e#29#40#0" expanded="true" />
                   </folding>
@@ -60,8 +62,8 @@
           <file leaf-file-name="SetList.json" pinned="false" current-in-tab="false">
             <entry file="file://D:/dev/python/magic-tools/SetList.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-4.9615383">
-                  <caret line="790" column="3" selection-start-line="790" selection-start-column="3" selection-end-line="790" selection-end-column="3" />
+                <state vertical-scroll-proportion="-3.9230769">
+                  <caret line="787" column="16" selection-start-line="787" selection-start-column="16" selection-end-line="787" selection-end-column="16" />
                   <folding />
                 </state>
               </provider>
@@ -101,9 +103,9 @@
         <option value="D:/dev/python/magic-tools/.idea/workspace.xml" />
         <option value="D:/dev/python/magic-tools/SetList.json" />
         <option value="D:/dev/python/magic-tools/SetCodes.json" />
-        <option value="D:/dev/python/magic-tools/mtgset/mtgset/output/sets_mcinfo.json" />
         <option value="D:/dev/python/magic-tools/mtgset/mtgset/spiders/magic.py" />
         <option value="D:/dev/python/magic-tools/mtgset/image_download.py" />
+        <option value="D:/dev/python/magic-tools/mtgset/mtgset/output/sets_mcinfo.json" />
       </list>
     </option>
   </component>
@@ -117,8 +119,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1696" />
+    <option name="height" value="1026" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -459,7 +461,13 @@
       <option name="project" value="LOCAL" />
       <updated>1432073447057</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary=" Automatic creation of magiccard.info set info done.">
+      <created>1432073480151</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1432073480151</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView">
@@ -472,16 +480,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.119791664" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13690476" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946146" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293348" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -621,8 +629,8 @@
     </entry>
     <entry file="file://D:/dev/python/magic-tools/SetList.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.9615383">
-          <caret line="790" column="3" selection-start-line="790" selection-start-column="3" selection-end-line="790" selection-end-column="3" />
+        <state vertical-scroll-proportion="-3.9230769">
+          <caret line="787" column="16" selection-start-line="787" selection-start-column="16" selection-end-line="787" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -647,8 +655,8 @@
     </entry>
     <entry file="file://D:/dev/python/magic-tools/mtgset/image_download.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38846573">
-          <caret line="66" column="49" selection-start-line="66" selection-start-column="48" selection-end-line="66" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.114735655">
+          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
           <folding>
             <element signature="e#29#40#0" expanded="true" />
           </folding>

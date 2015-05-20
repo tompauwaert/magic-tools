@@ -1,68 +1,342 @@
-[{"url": "http://magiccards.info//dtk/en.html", "code": "dtk", "name": "Dragons of Tarkir"},
-{"url": "http://magiccards.info//frf/en.html", "code": "frf", "name": "Fate Reforged"},
-{"url": "http://magiccards.info//ktk/en.html", "code": "ktk", "name": "Khans of Tarkir"},
-{"url": "http://magiccards.info//jou/en.html", "code": "jou", "name": "Journey into Nyx"},
-{"url": "http://magiccards.info//bng/en.html", "code": "bng", "name": "Born of the Gods"},
-{"url": "http://magiccards.info//ths/en.html", "code": "ths", "name": "Theros"},
-{"url": "http://magiccards.info//dgm/en.html", "code": "dgm", "name": "Dragon's Maze"},
-{"url": "http://magiccards.info//gtc/en.html", "code": "gtc", "name": "Gatecrash"},
-{"url": "http://magiccards.info//rtr/en.html", "code": "rtr", "name": "Return to Ravnica"},
-{"url": "http://magiccards.info//avr/en.html", "code": "avr", "name": "Avacyn Restored"},
-{"url": "http://magiccards.info//dka/en.html", "code": "dka", "name": "Dark Ascension"},
-{"url": "http://magiccards.info//isd/en.html", "code": "isd", "name": "Innistrad"},
-{"url": "http://magiccards.info//nph/en.html", "code": "nph", "name": "New Phyrexia"},
-{"url": "http://magiccards.info//mbs/en.html", "code": "mbs", "name": "Mirrodin Besieged"},
-{"url": "http://magiccards.info//som/en.html", "code": "som", "name": "Scars of Mirrodin"},
-{"url": "http://magiccards.info//roe/en.html", "code": "roe", "name": "Rise of the Eldrazi"},
-{"url": "http://magiccards.info//wwk/en.html", "code": "wwk", "name": "Worldwake"},
-{"url": "http://magiccards.info//zen/en.html", "code": "zen", "name": "Zendikar"},
-{"url": "http://magiccards.info//arb/en.html", "code": "arb", "name": "Alara Reborn"},
-{"url": "http://magiccards.info//cfx/en.html", "code": "cfx", "name": "Conflux"},
-{"url": "http://magiccards.info//ala/en.html", "code": "ala", "name": "Shards of Alara"},
-{"url": "http://magiccards.info//eve/en.html", "code": "eve", "name": "Eventide"},
-{"url": "http://magiccards.info//shm/en.html", "code": "shm", "name": "Shadowmoor"},
-{"url": "http://magiccards.info//mt/en.html", "code": "mt", "name": "Morningtide"},
-{"url": "http://magiccards.info//lw/en.html", "code": "lw", "name": "Lorwyn"},
-{"url": "http://magiccards.info//fut/en.html", "code": "fut", "name": "Future Sight"},
-{"url": "http://magiccards.info//pc/en.html", "code": "pc", "name": "Planar Chaos"},
-{"url": "http://magiccards.info//ts/en.html", "code": "ts", "name": "Time Spiral"},
-{"url": "http://magiccards.info//tsts/en.html", "code": "tsts", "name": "Time Spiral \"Timeshifted\""},
-{"url": "http://magiccards.info//cs/en.html", "code": "cs", "name": "Coldsnap"},
-{"url": "http://magiccards.info//ai/en.html", "code": "ai", "name": "Alliances"},
-{"url": "http://magiccards.info//ia/en.html", "code": "ia", "name": "Ice Age"},
-{"url": "http://magiccards.info//di/en.html", "code": "di", "name": "Dissension"},
-{"url": "http://magiccards.info//gp/en.html", "code": "gp", "name": "Guildpact"},
-{"url": "http://magiccards.info//rav/en.html", "code": "rav", "name": "Ravnica: City of Guilds"},
-{"url": "http://magiccards.info//sok/en.html", "code": "sok", "name": "Saviors of Kamigawa"},
-{"url": "http://magiccards.info//bok/en.html", "code": "bok", "name": "Betrayers of Kamigawa"},
-{"url": "http://magiccards.info//chk/en.html", "code": "chk", "name": "Champions of Kamigawa"},
-{"url": "http://magiccards.info//5dn/en.html", "code": "5dn", "name": "Fifth Dawn"},
-{"url": "http://magiccards.info//ds/en.html", "code": "ds", "name": "Darksteel"},
-{"url": "http://magiccards.info//mi/en.html", "code": "mi", "name": "Mirrodin"},
-{"url": "http://magiccards.info//sc/en.html", "code": "sc", "name": "Scourge"},
-{"url": "http://magiccards.info//le/en.html", "code": "le", "name": "Legions"},
-{"url": "http://magiccards.info//on/en.html", "code": "on", "name": "Onslaught"},
-{"url": "http://magiccards.info//ju/en.html", "code": "ju", "name": "Judgment"},
-{"url": "http://magiccards.info//tr/en.html", "code": "tr", "name": "Torment"},
-{"url": "http://magiccards.info//od/en.html", "code": "od", "name": "Odyssey"},
-{"url": "http://magiccards.info//ap/en.html", "code": "ap", "name": "Apocalypse"},
-{"url": "http://magiccards.info//ps/en.html", "code": "ps", "name": "Planeshift"},
-{"url": "http://magiccards.info//in/en.html", "code": "in", "name": "Invasion"},
-{"url": "http://magiccards.info//pr/en.html", "code": "pr", "name": "Prophecy"},
-{"url": "http://magiccards.info//ne/en.html", "code": "ne", "name": "Nemesis"},
-{"url": "http://magiccards.info//mm/en.html", "code": "mm", "name": "Mercadian Masques"},
-{"url": "http://magiccards.info//ud/en.html", "code": "ud", "name": "Urza's Destiny"},
-{"url": "http://magiccards.info//ul/en.html", "code": "ul", "name": "Urza's Legacy"},
-{"url": "http://magiccards.info//us/en.html", "code": "us", "name": "Urza's Saga"},
-{"url": "http://magiccards.info//ex/en.html", "code": "ex", "name": "Exodus"},
-{"url": "http://magiccards.info//sh/en.html", "code": "sh", "name": "Stronghold"},
-{"url": "http://magiccards.info//tp/en.html", "code": "tp", "name": "Tempest"},
-{"url": "http://magiccards.info//wl/en.html", "code": "wl", "name": "Weatherlight"},
-{"url": "http://magiccards.info//vi/en.html", "code": "vi", "name": "Visions"},
-{"url": "http://magiccards.info//mr/en.html", "code": "mr", "name": "Mirage"},
-{"url": "http://magiccards.info//hl/en.html", "code": "hl", "name": "Homelands"},
-{"url": "http://magiccards.info//fe/en.html", "code": "fe", "name": "Fallen Empires"},
-{"url": "http://magiccards.info//dk/en.html", "code": "dk", "name": "The Dark"},
-{"url": "http://magiccards.info//lg/en.html", "code": "lg", "name": "Legends"},
-{"url": "http://magiccards.info//aq/en.html", "code": "aq", "name": "Antiquities"},
-{"url": "http://magiccards.info//an/en.html", "code": "an", "name": "Arabian Nights"}]
+[
+  {
+    "url": "http://magiccards.info/dtk/en.html",
+    "code": "dtk",
+    "name": "Dragons of Tarkir"
+  },
+  {
+    "url": "http://magiccards.info/frf/en.html",
+    "code": "frf",
+    "name": "Fate Reforged"
+  },
+  {
+    "url": "http://magiccards.info/ktk/en.html",
+    "code": "ktk",
+    "name": "Khans of Tarkir"
+  },
+  {
+    "url": "http://magiccards.info/jou/en.html",
+    "code": "jou",
+    "name": "Journey into Nyx"
+  },
+  {
+    "url": "http://magiccards.info/bng/en.html",
+    "code": "bng",
+    "name": "Born of the Gods"
+  },
+  {
+    "url": "http://magiccards.info/ths/en.html",
+    "code": "ths",
+    "name": "Theros"
+  },
+  {
+    "url": "http://magiccards.info/dgm/en.html",
+    "code": "dgm",
+    "name": "Dragon's Maze"
+  },
+  {
+    "url": "http://magiccards.info/gtc/en.html",
+    "code": "gtc",
+    "name": "Gatecrash"
+  },
+  {
+    "url": "http://magiccards.info/rtr/en.html",
+    "code": "rtr",
+    "name": "Return to Ravnica"
+  },
+  {
+    "url": "http://magiccards.info/avr/en.html",
+    "code": "avr",
+    "name": "Avacyn Restored"
+  },
+  {
+    "url": "http://magiccards.info/dka/en.html",
+    "code": "dka",
+    "name": "Dark Ascension"
+  },
+  {
+    "url": "http://magiccards.info/isd/en.html",
+    "code": "isd",
+    "name": "Innistrad"
+  },
+  {
+    "url": "http://magiccards.info/nph/en.html",
+    "code": "nph",
+    "name": "New Phyrexia"
+  },
+  {
+    "url": "http://magiccards.info/mbs/en.html",
+    "code": "mbs",
+    "name": "Mirrodin Besieged"
+  },
+  {
+    "url": "http://magiccards.info/som/en.html",
+    "code": "som",
+    "name": "Scars of Mirrodin"
+  },
+  {
+    "url": "http://magiccards.info/roe/en.html",
+    "code": "roe",
+    "name": "Rise of the Eldrazi"
+  },
+  {
+    "url": "http://magiccards.info/wwk/en.html",
+    "code": "wwk",
+    "name": "Worldwake"
+  },
+  {
+    "url": "http://magiccards.info/zen/en.html",
+    "code": "zen",
+    "name": "Zendikar"
+  },
+  {
+    "url": "http://magiccards.info/arb/en.html",
+    "code": "arb",
+    "name": "Alara Reborn"
+  },
+  {
+    "url": "http://magiccards.info/cfx/en.html",
+    "code": "cfx",
+    "name": "Conflux"
+  },
+  {
+    "url": "http://magiccards.info/ala/en.html",
+    "code": "ala",
+    "name": "Shards of Alara"
+  },
+  {
+    "url": "http://magiccards.info/eve/en.html",
+    "code": "eve",
+    "name": "Eventide"
+  },
+  {
+    "url": "http://magiccards.info/shm/en.html",
+    "code": "shm",
+    "name": "Shadowmoor"
+  },
+  {
+    "url": "http://magiccards.info/mt/en.html",
+    "code": "mt",
+    "name": "Morningtide"
+  },
+  {
+    "url": "http://magiccards.info/lw/en.html",
+    "code": "lw",
+    "name": "Lorwyn"
+  },
+  {
+    "url": "http://magiccards.info/fut/en.html",
+    "code": "fut",
+    "name": "Future Sight"
+  },
+  {
+    "url": "http://magiccards.info/pc/en.html",
+    "code": "pc",
+    "name": "Planar Chaos"
+  },
+  {
+    "url": "http://magiccards.info/ts/en.html",
+    "code": "ts",
+    "name": "Time Spiral"
+  },
+  {
+    "url": "http://magiccards.info/tsts/en.html",
+    "code": "tsts",
+    "name": "Time Spiral \"Timeshifted\""
+  },
+  {
+    "url": "http://magiccards.info/cs/en.html",
+    "code": "cs",
+    "name": "Coldsnap"
+  },
+  {
+    "url": "http://magiccards.info/ai/en.html",
+    "code": "ai",
+    "name": "Alliances"
+  },
+  {
+    "url": "http://magiccards.info/ia/en.html",
+    "code": "ia",
+    "name": "Ice Age"
+  },
+  {
+    "url": "http://magiccards.info/di/en.html",
+    "code": "di",
+    "name": "Dissension"
+  },
+  {
+    "url": "http://magiccards.info/gp/en.html",
+    "code": "gp",
+    "name": "Guildpact"
+  },
+  {
+    "url": "http://magiccards.info/rav/en.html",
+    "code": "rav",
+    "name": "Ravnica: City of Guilds"
+  },
+  {
+    "url": "http://magiccards.info/sok/en.html",
+    "code": "sok",
+    "name": "Saviors of Kamigawa"
+  },
+  {
+    "url": "http://magiccards.info/bok/en.html",
+    "code": "bok",
+    "name": "Betrayers of Kamigawa"
+  },
+  {
+    "url": "http://magiccards.info/chk/en.html",
+    "code": "chk",
+    "name": "Champions of Kamigawa"
+  },
+  {
+    "url": "http://magiccards.info/5dn/en.html",
+    "code": "5dn",
+    "name": "Fifth Dawn"
+  },
+  {
+    "url": "http://magiccards.info/ds/en.html",
+    "code": "ds",
+    "name": "Darksteel"
+  },
+  {
+    "url": "http://magiccards.info/mi/en.html",
+    "code": "mi",
+    "name": "Mirrodin"
+  },
+  {
+    "url": "http://magiccards.info/sc/en.html",
+    "code": "sc",
+    "name": "Scourge"
+  },
+  {
+    "url": "http://magiccards.info/le/en.html",
+    "code": "le",
+    "name": "Legions"
+  },
+  {
+    "url": "http://magiccards.info/on/en.html",
+    "code": "on",
+    "name": "Onslaught"
+  },
+  {
+    "url": "http://magiccards.info/ju/en.html",
+    "code": "ju",
+    "name": "Judgment"
+  },
+  {
+    "url": "http://magiccards.info/tr/en.html",
+    "code": "tr",
+    "name": "Torment"
+  },
+  {
+    "url": "http://magiccards.info/od/en.html",
+    "code": "od",
+    "name": "Odyssey"
+  },
+  {
+    "url": "http://magiccards.info/ap/en.html",
+    "code": "ap",
+    "name": "Apocalypse"
+  },
+  {
+    "url": "http://magiccards.info/ps/en.html",
+    "code": "ps",
+    "name": "Planeshift"
+  },
+  {
+    "url": "http://magiccards.info/in/en.html",
+    "code": "in",
+    "name": "Invasion"
+  },
+  {
+    "url": "http://magiccards.info/pr/en.html",
+    "code": "pr",
+    "name": "Prophecy"
+  },
+  {
+    "url": "http://magiccards.info/ne/en.html",
+    "code": "ne",
+    "name": "Nemesis"
+  },
+  {
+    "url": "http://magiccards.info/mm/en.html",
+    "code": "mm",
+    "name": "Mercadian Masques"
+  },
+  {
+    "url": "http://magiccards.info/ud/en.html",
+    "code": "ud",
+    "name": "Urza's Destiny"
+  },
+  {
+    "url": "http://magiccards.info/ul/en.html",
+    "code": "ul",
+    "name": "Urza's Legacy"
+  },
+  {
+    "url": "http://magiccards.info/us/en.html",
+    "code": "us",
+    "name": "Urza's Saga"
+  },
+  {
+    "url": "http://magiccards.info/ex/en.html",
+    "code": "ex",
+    "name": "Exodus"
+  },
+  {
+    "url": "http://magiccards.info/sh/en.html",
+    "code": "sh",
+    "name": "Stronghold"
+  },
+  {
+    "url": "http://magiccards.info/tp/en.html",
+    "code": "tp",
+    "name": "Tempest"
+  },
+  {
+    "url": "http://magiccards.info/wl/en.html",
+    "code": "wl",
+    "name": "Weatherlight"
+  },
+  {
+    "url": "http://magiccards.info/vi/en.html",
+    "code": "vi",
+    "name": "Visions"
+  },
+  {
+    "url": "http://magiccards.info/mr/en.html",
+    "code": "mr",
+    "name": "Mirage"
+  },
+  {
+    "url": "http://magiccards.info/hl/en.html",
+    "code": "hl",
+    "name": "Homelands"
+  },
+  {
+    "url": "http://magiccards.info/fe/en.html",
+    "code": "fe",
+    "name": "Fallen Empires"
+  },
+  {
+    "url": "http://magiccards.info/dk/en.html",
+    "code": "dk",
+    "name": "The Dark"
+  },
+  {
+    "url": "http://magiccards.info/lg/en.html",
+    "code": "lg",
+    "name": "Legends"
+  },
+  {
+    "url": "http://magiccards.info/aq/en.html",
+    "code": "aq",
+    "name": "Antiquities"
+  },
+  {
+    "url": "http://magiccards.info/an/en.html",
+    "code": "an",
+    "name": "Arabian Nights"
+  }
+]
