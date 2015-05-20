@@ -23,11 +23,13 @@ class SetManager(object):
     """
     _JSON_SET_FILE_ORIGINAL = os.path.dirname(os.path.dirname(os.path.realpath(__file__))) \
                     + os.path.sep + "SetList.json"
+    _JSON_ALL_SETS = os.path.dirname(os.path.dirname(os.path.realpath(__file__))) \
+                              + os.path.sep + "AllSets-x.json"
     _JSON_SET_FILE_MCINFO = os.path.dirname(os.path.realpath(__file__)) \
                             + os.path.sep + "mtgset" \
                             + os.path.sep + "output" \
                             + os.path.sep + "sets_mcinfo.json"
-    _SPIDER = "sets_crawler"
+    _SPIDER = "setlist-spider"
     _FORMAT = "json"
     _sets_original = None
     _sets_mcinfo = None
@@ -38,8 +40,11 @@ class SetManager(object):
         Original means that the setlist information comes from mtgjson.com instead
         of a setlist that is scraped from magiccard.info
         """
+        if not os.path.isfile(self._JSON_SET_FILE_ORIGINAL):
+            self._create_sets_original()
+
         with open(self._JSON_SET_FILE_ORIGINAL) as json_file:
-            self._sets_original = json.load(json_file)
+            self._sets_original = json.load(json_file, encoding='utf-8')
 
     def list_sets_original(self):
         """
@@ -64,7 +69,7 @@ class SetManager(object):
             self._create_sets_mcinfo()
 
         with open(self._JSON_SET_FILE_MCINFO) as json_file:
-            self._sets_mcinfo = json.load(json_file)
+            self._sets_mcinfo = json.load(json_file, encoding='utf-8')
 
 
 
@@ -89,6 +94,43 @@ class SetManager(object):
         if not os.path.isfile(self._JSON_SET_FILE_MCINFO):
             print "DEBUG: [ERROR] Crawling Unsuccesful, output file not found."
 
+    def _create_sets_original(self):
+        """
+        Create a list of all sets in json format. The list contains following fields for each set:
+        - name
+        - releaseDate
+        - code
+        - gathererCode
+        - oldCode
+        - magicCardsInfoCode
+
+        This data can be used to map magiccardsinfo data scraped from their website to their
+        set counterparts using the official codes.
+        :return:
+        """
+        with open(self._JSON_ALL_SETS) as json_file:
+            _all_sets = json.load(json_file, encoding='utf-8')
+            _set_list = {}
+
+            for key in _all_sets.keys():
+                _set_list[key] = {}
+                _set_list[key]['name'] = _all_sets[key]['name']
+                _set_list[key]['releaseDate'] = _all_sets[key]['releaseDate']
+                _set_list[key]['code'] = _all_sets[key]['code']
+
+                if 'gathererCode' in _all_sets[key].keys():
+                    _set_list[key]['gathererCode'] = _all_sets[key]['gathererCode']
+
+                if 'oldCode' in _all_sets[key].keys():
+                    _set_list[key]['oldCode'] = _all_sets[key]['oldCode']
+
+                if 'magicCardsInfoCode' in _all_sets[key].keys():
+                    _set_list[key]['magicCardsInfoCode'] = _all_sets[key]['magicCardsInfoCode']
+
+        with open (self._JSON_SET_FILE_ORIGINAL, 'w') as output:
+            json.dump(_set_list, output, indent=4)
+            print "I'm here!"
+
 
 
 if __name__ == "__main__":
@@ -96,8 +138,8 @@ if __name__ == "__main__":
     # sm.read_sets_original()
     # sm.list_sets_original()
     # sm.read_sets_mcinfo()
-    sm.read_sets_mcinfo()
-
+    # sm.read_sets_mcinfo()
+    # sm._create_sets_original()
 
 
 

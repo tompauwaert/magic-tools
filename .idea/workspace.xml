@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b3d97a5-3697-462e-b890-e3ae501efe4b" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\dev\python\magic-tools\mtgset\mtgset\output\sets_mcinfo.json" afterPath="" />
-      <change type="MODIFICATION" beforePath="D:/dev/python/magic-tools/mtgset/image_download.py" afterPath="D:/dev/python/magic-tools/mtgset/image_download.py" />
+      <change type="NEW" beforePath="" afterPath="D:/dev/python/magic-tools/mtgset/mtgset/spiders/set_spider.py" />
+      <change type="DELETED" beforePath="D:\dev\python\magic-tools\SetCodes.json" afterPath="" />
+      <change type="DELETED" beforePath="D:\dev\python\magic-tools\SetList.json" afterPath="" />
       <change type="MODIFICATION" beforePath="D:/dev/python/magic-tools/.idea/workspace.xml" afterPath="D:/dev/python/magic-tools/.idea/workspace.xml" />
+      <change type="MOVED" beforePath="D:\dev\python\magic-tools\mtgset\image_download.py" afterPath="D:/dev/python/magic-tools/mtgset/set_downloader.py" />
+      <change type="MOVED" beforePath="D:\dev\python\magic-tools\mtgset\mtgset\spiders\magic.py" afterPath="D:/dev/python/magic-tools/mtgset/mtgset/spiders/setlist-spider.py" />
     </list>
     <ignored path="untitled.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,11 +34,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.6186207">
       <split-first>
         <leaf>
-          <file leaf-file-name="image_download.py" pinned="false" current-in-tab="true">
-            <entry file="file://D:/dev/python/magic-tools/mtgset/image_download.py">
+          <file leaf-file-name="set_downloader.py" pinned="false" current-in-tab="true">
+            <entry file="file://D:/dev/python/magic-tools/mtgset/set_downloader.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.114735655">
-                  <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.7075366">
+                  <caret line="135" column="25" selection-start-line="135" selection-start-column="25" selection-end-line="135" selection-end-column="25" />
                   <folding>
                     <element signature="e#29#40#0" expanded="true" />
                   </folding>
@@ -43,14 +46,36 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="magic.py" pinned="false" current-in-tab="false">
-            <entry file="file://D:/dev/python/magic-tools/mtgset/mtgset/spiders/magic.py">
+          <file leaf-file-name="setlist-spider.py" pinned="false" current-in-tab="false">
+            <entry file="file://D:/dev/python/magic-tools/mtgset/mtgset/spiders/setlist-spider.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+                  <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
                   <folding>
                     <element signature="e#257#295#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="set_spider.py" pinned="false" current-in-tab="false">
+            <entry file="file://D:/dev/python/magic-tools/mtgset/mtgset/spiders/set_spider.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+                  <folding>
+                    <element signature="e#279#317#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="spider.py" pinned="false" current-in-tab="false">
+            <entry file="file://C:/Python27/Lib/site-packages/scrapy/spider.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -59,21 +84,11 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="SetList.json" pinned="false" current-in-tab="false">
-            <entry file="file://D:/dev/python/magic-tools/SetList.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-3.9230769">
-                  <caret line="787" column="16" selection-start-line="787" selection-start-column="16" selection-end-line="787" selection-end-column="16" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="sets_mcinfo.json" pinned="false" current-in-tab="true">
             <entry file="file://D:/dev/python/magic-tools/mtgset/mtgset/output/sets_mcinfo.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.51216686">
+                  <caret line="26" column="2" selection-start-line="26" selection-start-column="2" selection-end-line="26" selection-end-column="2" />
                   <folding />
                 </state>
               </provider>
@@ -101,11 +116,13 @@
         <option value="D:/dev/python/magic-tools/mtgset/mtgset/items.py" />
         <option value="D:/dev/python/magic-tools/mtgset/images_download.py" />
         <option value="D:/dev/python/magic-tools/.idea/workspace.xml" />
-        <option value="D:/dev/python/magic-tools/SetList.json" />
-        <option value="D:/dev/python/magic-tools/SetCodes.json" />
-        <option value="D:/dev/python/magic-tools/mtgset/mtgset/spiders/magic.py" />
         <option value="D:/dev/python/magic-tools/mtgset/image_download.py" />
+        <option value="D:/dev/python/magic-tools/mtgset/mtgset/spiders/magic.py" />
         <option value="D:/dev/python/magic-tools/mtgset/mtgset/output/sets_mcinfo.json" />
+        <option value="D:/dev/python/magic-tools/mtgset/mtgset/spiders/set_spider.py" />
+        <option value="D:/dev/python/magic-tools/SetCodes.json" />
+        <option value="D:/dev/python/magic-tools/SetList.json" />
+        <option value="D:/dev/python/magic-tools/mtgset/set_downloader.py" />
       </list>
     </option>
   </component>
@@ -200,6 +217,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="mtgset" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="magic-tools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="magic-tools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mtgset" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mtgset" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spiders" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -467,7 +506,13 @@
       <option name="project" value="LOCAL" />
       <updated>1432073480151</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Reading mcinfo set data complete">
+      <created>1432113685726</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1432113685726</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView">
@@ -543,7 +588,8 @@
     <MESSAGE value="Added .json files.&#10;Starting functionality: loading sets from the json file and determine which ones the user might want to download." />
     <MESSAGE value="Reading sets_original okay.&#10;Printing sets_original with id numbers okay." />
     <MESSAGE value=" Automatic creation of magiccard.info set info done." />
-    <option name="LAST_COMMIT_MESSAGE" value=" Automatic creation of magiccard.info set info done." />
+    <MESSAGE value="Reading mcinfo set data complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reading mcinfo set data complete" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -587,14 +633,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://D:/dev/python/magic-tools/SetCodes.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2956327">
-          <caret line="147" column="7" selection-start-line="147" selection-start-column="7" selection-end-line="147" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/dev/python/magic-tools/mtgset/mtgset/items.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -627,36 +665,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/dev/python/magic-tools/SetList.json">
+    <entry file="file://C:/Python27/Lib/site-packages/scrapy/spider.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9230769">
-          <caret line="787" column="16" selection-start-line="787" selection-start-column="16" selection-end-line="787" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/dev/python/magic-tools/mtgset/mtgset/output/sets_mcinfo.json">
+    <entry file="file://D:/dev/python/magic-tools/mtgset/mtgset/spiders/set_spider.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+          <folding>
+            <element signature="e#279#317#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/dev/python/magic-tools/mtgset/mtgset/spiders/magic.py">
+    <entry file="file://D:/dev/python/magic-tools/mtgset/mtgset/spiders/setlist-spider.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
             <element signature="e#257#295#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://D:/dev/python/magic-tools/mtgset/image_download.py">
+    <entry file="file://D:/dev/python/magic-tools/mtgset/mtgset/output/sets_mcinfo.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.114735655">
-          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.51216686">
+          <caret line="26" column="2" selection-start-line="26" selection-start-column="2" selection-end-line="26" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/dev/python/magic-tools/mtgset/set_downloader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7075366">
+          <caret line="135" column="25" selection-start-line="135" selection-start-column="25" selection-end-line="135" selection-end-column="25" />
           <folding>
             <element signature="e#29#40#0" expanded="true" />
           </folding>

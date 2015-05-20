@@ -13,8 +13,8 @@ from scrapy.spider import Spider
 from ..items import Set
 
 
-class MagicSpider(Spider):
-    name = "sets_crawler"
+class SetsSpider(Spider):
+    name = "setlist-spider"
     allowed_domains = ["http://magiccards.info"]
     start_urls = [
         "http://magiccards.info/sitemap.html"
