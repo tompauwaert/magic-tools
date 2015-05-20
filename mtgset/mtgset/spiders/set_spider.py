@@ -24,6 +24,9 @@ class SetSpider(scrapy.Spider):
         manager.read_sets_mcinfo()
         manager.read_sets_original()
 
+        mciCodes = []
+
+
 
     def start_requests(self):
         """

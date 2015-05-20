@@ -11,18 +11,32 @@ class SetManager(object):
     """ Class that reads the entire set json file. It gives the user
     the option to select which sets to download.
 
-    Data members:
-    - _JSON_SET_FILE
-    - _sets_original: contains set list loaded from mtgjson.com
+    Private Data members [constant]:
+    - _JSON_SET_FILE_ORIGIINAL = Sets and codes based on the 'AllSets.Json' document
+    - _JSON_SET_FILE_MCINFO = Set names, codes and magiccards.info urls for the sets
+    - _JSON_ALL_SETS = The file containing all set and card information
+    - _SPIDER = Spider name to scrape magiccards.info set information
+    - _FORMAT = Format used to save the scraped data in.
+
+    Private Data members:
+    - _sets_original: contains set list loaded from mtgjson.com (read from file)
+    - _sets_mcinfo: set information (read from file) from magiccards.info
+
+    Public Data members:
+    - CODE: identifier for normal set codes
+    - OLDCODE: identifier for old set codes - compatibility with certain software
+    - GCODE: identifier for set codes on gatherer.wizards.com - if it differs from CODE
+    - MCICode; set code used by magiccards.info - if the set exists on magiccards.info
 
     TODO:
-        1. Order sets on release date
         2. Show which sets have been downloaded already
         3. Check whether all images have been correctly identified
         4. Support multiple languages
     """
     _JSON_SET_FILE_ORIGINAL = os.path.dirname(os.path.dirname(os.path.realpath(__file__))) \
-                    + os.path.sep + "SetList.json"
+                              + os.path.sep + "mtgset" \
+                              + os.path.sep + "output" \
+                              + os.path.sep + "SetList.json"
     _JSON_ALL_SETS = os.path.dirname(os.path.dirname(os.path.realpath(__file__))) \
                               + os.path.sep + "AllSets-x.json"
     _JSON_SET_FILE_MCINFO = os.path.dirname(os.path.realpath(__file__)) \
@@ -31,8 +45,56 @@ class SetManager(object):
                             + os.path.sep + "sets_mcinfo.json"
     _SPIDER = "setlist-spider"
     _FORMAT = "json"
-    _sets_original = None
-    _sets_mcinfo = None
+
+    CODE = "code"
+    OLDCODE = "oldcode"
+    GCODE = "gathererCode"
+    MCICODE = "magicCardsInfoCode"
+
+    def __init__(self):
+        """
+        Initialize the
+        :return:
+        """
+        self._sets_original = None
+        self._sets_mcinfo = None
+
+    def map_code(self, code, original=None, to=None):
+        """
+        Map a code from one version to another.
+
+        :param code: code we try to map.
+        :param original: origin of the original code
+        :param to: format we wish to map the code to.
+        :return: the corresponding code in the destination format. Or None if the code
+            had no special mapping in the destination format.
+        :raises: ValueError - if the 'code' is a non-existing code.
+                            - if 'original' or 'to' are non existing code identifiers
+                              (e.g. CODE, OLDCODE, GCODE, MCICODE)
+        """
+        if original == None:
+            original = self.CODE
+        if to == None:
+            to = self.MCICODE
+        if self._sets_original == None:
+            self.read_sets_original()
+
+        codes = [self.CODE, self.OLDCODE, self.GCODE, self.MCICODE]
+        if not original in codes:
+            raise ValueError("Invalid original code '{}'".format(original))
+        if not to in codes:
+            raise ValueError("Invalid to code '{}'".format(to))
+
+        for key in self._sets_original:
+            if original in self._sets_original[key].keys() and \
+                self._sets_original[key][original] == code:
+                if to in self._sets_original[key].keys():
+                    return self._sets_original[key][to]
+                else:
+                    return None
+
+        raise ValueError("Code '{}' does not exist".format(code))
+
 
     def read_sets_original(self):
         """
@@ -116,16 +178,16 @@ class SetManager(object):
                 _set_list[key] = {}
                 _set_list[key]['name'] = _all_sets[key]['name']
                 _set_list[key]['releaseDate'] = _all_sets[key]['releaseDate']
-                _set_list[key]['code'] = _all_sets[key]['code']
+                _set_list[key][self.CODE] = _all_sets[key][self.CODE]
 
-                if 'gathererCode' in _all_sets[key].keys():
-                    _set_list[key]['gathererCode'] = _all_sets[key]['gathererCode']
+                if self.GCODE in _all_sets[key].keys():
+                    _set_list[key][self.GCODE] = _all_sets[key][self.GCODE]
 
-                if 'oldCode' in _all_sets[key].keys():
-                    _set_list[key]['oldCode'] = _all_sets[key]['oldCode']
+                if self.OLDCODE in _all_sets[key].keys():
+                    _set_list[key][self.OLDCODE] = _all_sets[key][self.OLDCODE]
 
-                if 'magicCardsInfoCode' in _all_sets[key].keys():
-                    _set_list[key]['magicCardsInfoCode'] = _all_sets[key]['magicCardsInfoCode']
+                if self.MCICODE in _all_sets[key].keys():
+                    _set_list[key][self.MCICODE] = _all_sets[key][self.MCICODE]
 
         with open (self._JSON_SET_FILE_ORIGINAL, 'w') as output:
             json.dump(_set_list, output, indent=4)
