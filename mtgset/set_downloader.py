@@ -59,48 +59,67 @@ class SetManager(object):
         self._sets_original = None
         self._sets_mcinfo = None
 
-    def map_code(self, code, original=None, to=None):
+    def map_code(self, code, original_ct=None, to_ct=None):
         """
-        Map a code from one version to another.
+        Map a code from one version to another.\n
 
-        :param code: code we try to map.
-        :param original: origin of the original code
-        :param to: format we wish to map the code to.
+        :param code: code we try to map.\n
+        :param original_ct: origin of the original_ct code\n
+        :param to_ct: format we wish to map the code to.\n
         :return: the corresponding code in the destination format. Or None if the code
-            had no special mapping in the destination format.
-        :raises: ValueError - if the 'code' is a non-existing code.
-                            - if 'original' or 'to' are non existing code identifiers
-                              (e.g. CODE, OLDCODE, GCODE, MCICODE)
+            had no special mapping in the destination format.\n
+        :raises ValueError: - if the 'code' is a non-existing code.\n
+                            - if 'original_ct' or 'to_ct' are non existing code identifiers
+                              (e.g. CODE, OLDCODE, GCODE, MCICODE)\n
         """
-        if original == None:
-            original = self.CODE
-        if to == None:
-            to = self.MCICODE
+        if original_ct == None:
+            original_ct = self.CODE
+        if to_ct == None:
+            to_ct = self.MCICODE
         if self._sets_original == None:
             self.read_sets_original()
 
         codes = [self.CODE, self.OLDCODE, self.GCODE, self.MCICODE]
-        if not original in codes:
-            raise ValueError("Invalid original code '{}'".format(original))
-        if not to in codes:
-            raise ValueError("Invalid to code '{}'".format(to))
+        if not original_ct in codes:
+            raise ValueError("Invalid _original_ code: '{}'".format(original_ct))
+        if not to_ct in codes:
+            raise ValueError("Invalid _to_ code: '{}'".format(to_ct))
 
         for key in self._sets_original:
-            if original in self._sets_original[key].keys() and \
-                self._sets_original[key][original] == code:
-                if to in self._sets_original[key].keys():
-                    return self._sets_original[key][to]
+            if original_ct in self._sets_original[key].keys() and \
+                self._sets_original[key][original_ct] == code:
+                if to_ct in self._sets_original[key].keys():
+                    return self._sets_original[key][to_ct]
                 else:
                     return None
 
         raise ValueError("Code '{}' does not exist".format(code))
 
+    def get_mci_set_info(self, code):
+        """
+        Get the magiccards.info information for a default set.\n
+        :param code: code of the set - this is magiccards.info code name of the set.\n
+        :return: This returns the following set information in a dictionary.\n
+        - "name" : magiccards.info name of the set.\n
+        - "url" : magiccards.info url to the set\n
+        - "code" : magiccards.info code of the set\n
+        If the code is not recognized, this method returns None.\n
+        """
+        if self._sets_mcinfo == None:
+            self.read_sets_mcinfo()
+
+        for key in self._sets_mcinfo:
+            if self._sets_mcinfo[key]['code'] == code:
+                return self._sets_mcinfo[key]
+
+        return None
+
 
     def read_sets_original(self):
         """
-        Read the SetList.json file.
+        Read the SetList.json file.\n
         Original means that the setlist information comes from mtgjson.com instead
-        of a setlist that is scraped from magiccard.info
+        of a setlist that is scraped from magiccard.info\n
         """
         if not os.path.isfile(self._JSON_SET_FILE_ORIGINAL):
             self._create_sets_original()
@@ -138,8 +157,8 @@ class SetManager(object):
     def _create_sets_mcinfo(self):
         """
         Create the mcinfo sets json file by starting the spider that crawls the set data
-        from magiccard.info/sitemap.html
-
+        from magiccard.info/sitemap.html\n
+        \n
         TODO: Make the command line execution more robust (paths, etc....)
         :return:
         """
@@ -158,16 +177,16 @@ class SetManager(object):
 
     def _create_sets_original(self):
         """
-        Create a list of all sets in json format. The list contains following fields for each set:
-        - name
-        - releaseDate
-        - code
-        - gathererCode
-        - oldCode
-        - magicCardsInfoCode
-
+        Create a list of all sets in json format. The list contains following fields for each set:\n
+        - name\n
+        - releaseDate\n
+        - code\n
+        - gathererCode\n
+        - oldCode\n
+        - magicCardsInfoCode\n
+        \n
         This data can be used to map magiccardsinfo data scraped from their website to their
-        set counterparts using the official codes.
+        set counterparts using the official codes.\n
         :return:
         """
         with open(self._JSON_ALL_SETS) as json_file:
