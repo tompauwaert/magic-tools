@@ -14,3 +14,6 @@ class Set(scrapy.Item):
     name = scrapy.Field()
     url = scrapy.Field()
     code = scrapy.Field()
+
+class SimplePrint(scrapy.Item):
+    field = scrapy.Field()

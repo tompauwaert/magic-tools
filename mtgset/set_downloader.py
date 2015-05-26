@@ -1,10 +1,7 @@
-__author__ = 'tom.pauwaert'
-
 import json
-import os, sys
-from scrapy import cmdline
-import codecs, locale
-from pprint import pprint
+import os
+from collections import OrderedDict
+import utility
 
 
 class SetManager(object):
@@ -35,11 +32,13 @@ class SetManager(object):
     """
     _JSON_SET_FILE_ORIGINAL = os.path.dirname(os.path.dirname(os.path.realpath(__file__))) \
                               + os.path.sep + "mtgset" \
+                              + os.path.sep + "mtgset" \
                               + os.path.sep + "output" \
                               + os.path.sep + "SetList.json"
     _JSON_ALL_SETS = os.path.dirname(os.path.dirname(os.path.realpath(__file__))) \
                               + os.path.sep + "AllSets-x.json"
     _JSON_SET_FILE_MCINFO = os.path.dirname(os.path.realpath(__file__)) \
+                            + os.path.sep + "mtgset" \
                             + os.path.sep + "mtgset" \
                             + os.path.sep + "output" \
                             + os.path.sep + "sets_mcinfo.json"
@@ -127,17 +126,31 @@ class SetManager(object):
         with open(self._JSON_SET_FILE_ORIGINAL) as json_file:
             self._sets_original = json.load(json_file, encoding='utf-8')
 
+
     def list_sets_original(self):
         """
         List the original data sets: print with an id number.
-        Requires read_sets_original to be called first to populate the list.
+        Requires read_sets_original to be called first to populate the list.\n
+        Side-effect: The original set data will be sorted on release date in ascending order.\n
         :return:
         """
-        visual_counter = 1
-        for set in self._sets_original:
-            cleaned_name = set['name'].encode("ascii", 'replace')
-            print("{} - {} (released on: {})".format(visual_counter, cleaned_name, set['releaseDate']))
-            visual_counter += 1
+        if self._sets_original == None:
+            self.read_sets_original()
+
+        sorted_list = sorted(self._sets_original.items(),
+                             cmp=lambda x,y: cmp(x[1]["releaseDate"], y[1]["releaseDate"])
+         )
+        self._sets_original = OrderedDict()
+        for (key, value) in sorted_list:
+            self._sets_original[key] = value
+
+        for key in self._sets_original:
+            cleaned_name = self._sets_original[key]["name"].encode("ascii", "replace")
+            print("{: <10} - {} (released on: {})".format(
+                 key,
+                 cleaned_name,
+                 self._sets_original[key]['releaseDate']
+            ))
 
 
     def read_sets_mcinfo(self):
@@ -213,14 +226,38 @@ class SetManager(object):
             print "I'm here!"
 
 
+def download_sets(codes, set_manager=None):
+    """
+    Download an mtg set from magiccards.info. \n
+    :param code: codes of the set to download. The official code is expected here. The
+    expected parameter is a list.\n
+    :param set_manager the set manager to be used for the downloading. This parameter
+    is optional. If no setmanager is given, a new one is created.\n
+    :return: None
+    """
+    if not utility.is_sequence(codes):
+        raise ValueError("Expecting iterable list of codes. Argument is of type: {}".format(
+            type(codes)
+        ))
+
+    cmd = "scrapy crawl set-spider code_list={} -o test.json -t json".format(",".join(codes))
+
+
+
+
 
 if __name__ == "__main__":
     sm = SetManager()
     # sm.read_sets_original()
-    # sm.list_sets_original()
+    sm.list_sets_original()
     # sm.read_sets_mcinfo()
     # sm.read_sets_mcinfo()
     # sm._create_sets_original()
+
+    print "Which sets do you wish to download? Provide a comma separated list."
+    sets = raw_input().split(",")
+    download_sets(sets, sm)
+
 
 
 
