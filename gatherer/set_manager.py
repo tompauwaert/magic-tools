@@ -1,11 +1,12 @@
-from Queue import Queue
 import json
 import os
+import inspect
+import os.path
 from collections import OrderedDict
-import mtgset.utility
+from scrapy.settings import Settings
 from pprint import pprint
-from crawler import CrawlerWorker
-from mtgset.spiders.set_spider import SetSpider
+from crawler import run_crawler
+from gatherer.mtgset.spiders.setlist_spider import SetListSpider
 
 
 class SetManager(object):
@@ -36,16 +37,15 @@ class SetManager(object):
     """
     _JSON_SET_FILE_ORIGINAL = (os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
                                + os.path.sep + "mtgset"
-                               + os.path.sep + "mtgset"
                                + os.path.sep + "output"
                                + os.path.sep + "SetList.json")
-    _JSON_ALL_SETS = (os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+    _JSON_ALL_SETS = (os.path.dirname(os.path.realpath(__file__))
                       + os.path.sep + "AllSets-x.json")
     _JSON_SET_FILE_MCINFO = (os.path.dirname(os.path.realpath(__file__))
                              + os.path.sep + "mtgset"
-                             + os.path.sep + "mtgset"
                              + os.path.sep + "output"
                              + os.path.sep + "sets_mcinfo.json")
+    _JSON_SET_FILE_MCINF_URI = "file:///D:/dev/python/magic-tools/gatherer/mtgset/output/sets_mcinfo.json"
     _SPIDER = "setlist-spider"
     _FORMAT = "json"
 
@@ -175,13 +175,27 @@ class SetManager(object):
         :return:
         """
         print "DEBUG: Crawling http://magiccard.info/sitemap.html for set data."
-        cmd = "scrapy crawl {} -o \"{}\" -t {}".format(
-            self._SPIDER,
-            "mtgset/output/sets_mcinfo.json",
-            self._FORMAT
-        )
-        print cmd
-        os.system(cmd)
+        # cmd = "scrapy crawl {} -o \"{}\" -t {}".format(
+        #     self._SPIDER,
+        #     "mtgset/output/sets_mcinfo.json",
+        #     self._FORMAT
+        # )
+        # print cmd
+        # os.system(cmd)
+
+        settings = {
+            'FEED_URI' : self._JSON_SET_FILE_MCINF_URI,
+            'FEED_FORMAT' : 'json',
+        }
+        spider = SetListSpider()
+        # location =  inspect.getfile(spider.__class__)
+        # location = os.path.splitext(location)[0] + os.extsep + "py"
+        location = 'mtgset/spiders/setlist_spider.py'
+        run_crawler(location, [], settings)
+
+        # with open(self._JSON_SET_FILE_MCINFO, 'w') as file:
+        #     json.dump(results, file)
+
         print "DEBUG: Done crawling."
 
         if not os.path.isfile(self._JSON_SET_FILE_MCINFO):
@@ -225,26 +239,6 @@ class SetManager(object):
             print "I'm here!"
 
 
-def download_sets(codes, set_manager=None):
-    """
-    Download an mtg set from magiccards.info. \n
-    :param code: codes of the set to download. The official code is expected here. The
-    expected parameter is a list.\n
-    :param set_manager the set manager to be used for the downloading. This parameter
-    is optional. If no setmanager is given, a new one is created.\n
-    :return: None
-    """
-    if not mtgset.utility.is_sequence(codes):
-        raise ValueError("Expecting iterable list of codes. Argument is of type: {}".format(
-            type(codes)
-        ))
-
-    # TODO: Check that each set in codes is an existing code.
-    # cmd = "scrapy crawl set-spider code_list={} -o test.json -t json".format(",".join(codes))
-    results = Queue()
-    crawler = CrawlerWorker(SetSpider(code_list=codes))
-
-
 if __name__ == "__main__":
     sm = SetManager()
     # sm.read_sets_original()
@@ -253,6 +247,3 @@ if __name__ == "__main__":
     # sm.read_sets_mcinfo()
     # sm._create_sets_original()
 
-    print "Which sets do you wish to download? Provide a comma separated list."
-    sets = map(str.strip, raw_input().split(","))
-    download_sets(sets, sm)

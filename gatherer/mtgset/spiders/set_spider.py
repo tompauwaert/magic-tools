@@ -6,15 +6,8 @@ The urls they can be downloaded from have to be read by using the set_downloader
 """
 import re
 import scrapy
-import sys
-import time
-for p in sys.path:
-    print p
-
-time.sleep(1)
-
-from gatherer.set_downloader import SetManager
-from gatherer.mtgset.items import SimplePrint
+import gatherer.set_manager
+import gatherer.mtgset.items
 
 
 class SetSpider(scrapy.Spider):
@@ -40,7 +33,7 @@ class SetSpider(scrapy.Spider):
         else:
             codes = code_list
 
-        manager = SetManager()
+        manager = gatherer.set_manager.SetManager()
         manager.read_sets_mcinfo()
         manager.read_sets_original()
 
@@ -61,7 +54,7 @@ class SetSpider(scrapy.Spider):
         set_url = r".*magiccards.info/\w+/" + re.escape(self.language_codes) + r"\.html"
         card_url = r".*magiccards.info/\w+/" + re.escape(self.language_codes) + r"/\d+.html"
 
-        item = SimplePrint()
+        item = gatherer.mtgset.items.SimplePrint()
         item.field = {}
         item['set'] = set_url
         item['card'] = card_url

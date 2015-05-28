@@ -13,7 +13,7 @@ from scrapy.spider import Spider
 from ..items import Set
 
 
-class SetsSpider(Spider):
+class SetListSpider(Spider):
     name = "setlist-spider"
     allowed_domains = ["http://magiccards.info"]
     start_urls = [
@@ -21,6 +21,7 @@ class SetsSpider(Spider):
     ]
 
     def parse(self, response):
+        print "parsing"
         block_html_list = response.xpath("/html/body/table[2]/tr/td[1]/ul/li")
         for block_html in block_html_list:
             for set_html in block_html.xpath("ul/li"):
